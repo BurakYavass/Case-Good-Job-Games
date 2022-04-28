@@ -29,15 +29,12 @@ using UnityEngine;
           RaycastHit hit;
           if (Physics.Raycast(_rayPoint.transform.position, Vector3.down, out hit,1000f,_waxMask))
           {
-              Debug.Log("Wax");
               hit.collider.GetComponent<Renderer>().enabled = true;
               
-              waxScale.y += 5f*Time.fixedDeltaTime;
-              _wax.transform.localScale = waxScale;
-
-              if (waxScale.y > 103)
+              if (waxScale.y < 103)
               {
-                  Debug.Log("100 u gecti");
+                  waxScale.y += 5f*Time.fixedDeltaTime;
+                  _wax.transform.localScale = waxScale;
               }
 
           }
