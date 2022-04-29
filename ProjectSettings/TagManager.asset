@@ -8,6 +8,7 @@ TagManager:
   - Arm
   - Stick
   - Hair
+  - WaxParticle
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - UI
   - Arm
   - Wax
-  - 
-  - 
+  - Hair
+  - WaxParticle
   - 
   - 
   - 

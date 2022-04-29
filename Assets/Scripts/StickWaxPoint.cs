@@ -4,14 +4,21 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-  public class StickCollisionHandler : MonoBehaviour
+  public class StickWaxPoint : MonoBehaviour
   {
-      [SerializeField] private StickController _stickController;
       [SerializeField] private Transform _rayPoint;
 
       [SerializeField] private LayerMask _waxMask;
 
-      [SerializeField] private GameObject _wax;
+      [SerializeField] private GameObject waxPrefab;
+
+      private float waxColliderRadius;
+
+      private void Start()
+      {
+          waxColliderRadius = waxPrefab.GetComponent<SphereCollider>().radius;
+
+      }
 
       // Update is called once per frame
       void Update()
@@ -25,18 +32,14 @@ using UnityEngine;
 
       void WaxHit()
       {
-          Vector3 waxScale = _wax.transform.localScale;
           RaycastHit hit;
           if (Physics.Raycast(_rayPoint.transform.position, Vector3.down, out hit,1000f,_waxMask))
           {
-              hit.collider.GetComponent<Renderer>().enabled = true;
-              
-              if (waxScale.y < 103)
+              if (hit.collider.CompareTag("Arm"))
               {
-                  waxScale.y += 5f*Time.fixedDeltaTime;
-                  _wax.transform.localScale = waxScale;
+                  Instantiate(waxPrefab, hit.point+hit.normal.normalized*waxColliderRadius*waxPrefab.transform.localScale.x,Quaternion.LookRotation(hit.normal));
               }
-
+              
           }
       }
       
