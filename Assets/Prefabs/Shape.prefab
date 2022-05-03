@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1368734254097000993}
   - component: {fileID: -8959034105542532146}
   - component: {fileID: 4327294599252987532}
-  - component: {fileID: 7125519564735068766}
+  - component: {fileID: 4804446021095011385}
   m_Layer: 9
   m_Name: Shape
   m_TagString: Particle
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8443992130607734732}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -46,12 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eec817e7b341b30479aef4657374077a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shape: 0
+  shape: 4
   color: {r: 0.90588236, g: 0.42352942, b: 0.8980392, a: 1}
-  sphereRadius: 0.03
+  sphereRadius: 0.01
   boxDimensions: {x: 1, y: 1, z: 1}
-  roundBoxDimensions: {x: 0.5, y: 0.5, z: 0.5}
-  roundBoxFactor: 0.25
+  roundBoxDimensions: {x: 0.03, y: 0, z: 0.01}
+  roundBoxFactor: 0.02
   torusOuterRadius: 0.25
   torusInnerRadius: 0.5
   coneHeight: 1
@@ -86,8 +86,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: -8959034105542532146}
   _collider: {fileID: 0}
---- !u!64 &7125519564735068766
-MeshCollider:
+--- !u!65 &4804446021095011385
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -96,7 +96,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 3, y: 0.3, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

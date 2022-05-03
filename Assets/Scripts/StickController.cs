@@ -13,11 +13,6 @@ using UnityEngine;
      [SerializeField] private LayerMask _Mask;
      
      public bool _arm;
-     
-     private void Start()
-     {
-         //_armMask = LayerMask.GetMask("Arm");
-     }
 
      void Update()
      {
@@ -35,7 +30,7 @@ using UnityEngine;
              {
                  _arm = true;
                  transform.position = hitInfo.point+offSet*hitInfo.normal;
-                 transform.rotation = Quaternion.LookRotation(Vector3.back/offSet,hitInfo.normal);
+                 transform.rotation = Quaternion.LookRotation(Vector3.back,hitInfo.normal);
 
              }
              else

@@ -33,7 +33,7 @@ using UnityEngine;
               {
                   Debug.Log(hit.collider.tag+" "+hit.collider.name);
                   //Instantiate(waxPrefab, hit.point+hit.normal.normalized*waxPrefab.transform.localScale.x,Quaternion.LookRotation(hit.normal));
-                  Instantiate(waxPrefab, hit.point,Quaternion.LookRotation(hit.normal)).transform.SetParent(_operationTransform);
+                  Instantiate(waxPrefab, hit.point,Quaternion.LookRotation(Vector3.zero)).transform.SetParent(_operationTransform);
               }
 
               if (hit.collider.CompareTag("Particle"))
