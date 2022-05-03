@@ -8,19 +8,12 @@ using UnityEngine;
   {
       [SerializeField] private Transform _rayPoint;
 
-      [SerializeField] private LayerMask _waxMask;
+      [SerializeField] private LayerMask _layerMask;
 
       [SerializeField] private GameObject waxPrefab;
 
-      private float waxColliderRadius;
-
-      private void Start()
-      {
-          waxColliderRadius = waxPrefab.GetComponent<SphereCollider>().radius;
-
-      }
-
-      // Update is called once per frame
+      [SerializeField] private Transform _operationTransform;
+      
       void Update()
       {
           if (Input.GetMouseButton(0))
@@ -30,16 +23,24 @@ using UnityEngine;
           
       }
 
+      // ReSharper disable Unity.PerformanceAnalysis
       void WaxHit()
       {
           RaycastHit hit;
-          if (Physics.Raycast(_rayPoint.transform.position, Vector3.down, out hit,1000f,_waxMask))
+          if (Physics.Raycast(_rayPoint.transform.position, Vector3.down, out hit,100f,_layerMask))
           {
-              if (hit.collider.CompareTag("Arm"))
+              if (hit.collider.CompareTag("Wax") && !hit.collider.CompareTag("Particle"))
               {
-                  Instantiate(waxPrefab, hit.point+hit.normal.normalized*waxColliderRadius*waxPrefab.transform.localScale.x,Quaternion.LookRotation(hit.normal));
+                  Debug.Log(hit.collider.tag+" "+hit.collider.name);
+                  //Instantiate(waxPrefab, hit.point+hit.normal.normalized*waxPrefab.transform.localScale.x,Quaternion.LookRotation(hit.normal));
+                  Instantiate(waxPrefab, hit.point,Quaternion.LookRotation(hit.normal)).transform.SetParent(_operationTransform);
               }
-              
+
+              if (hit.collider.CompareTag("Particle"))
+              {
+                  Debug.Log("Particle");
+              }
+
           }
       }
       

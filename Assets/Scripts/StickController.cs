@@ -31,18 +31,11 @@ using UnityEngine;
          {
              Ray ray = camera.ScreenPointToRay(Input.mousePosition + Vector3.left*rayOffSet);
 
-             if (Physics.Raycast(ray, out RaycastHit hitInfo ,1000f ,_Mask))
+             if (Physics.Raycast(ray, out RaycastHit hitInfo ,100f ,_Mask))
              {
-                 // if (hitInfo.collider.CompareTag("Arm")|| hitInfo.collider.CompareTag("Wax")|| hitInfo.collider.CompareTag("Hair"))
-                 // {
-                 //     _arm = true;
-                 //     transform.position = hitInfo.point+offSet*hitInfo.normal;
-                 //     transform.rotation = Quaternion.LookRotation(Vector3.back,hitInfo.normal);
-                 //     
-                 // }
                  _arm = true;
                  transform.position = hitInfo.point+offSet*hitInfo.normal;
-                 transform.rotation = Quaternion.LookRotation(Vector3.back,hitInfo.normal);
+                 transform.rotation = Quaternion.LookRotation(Vector3.back/offSet,hitInfo.normal);
 
              }
              else

@@ -8,6 +8,7 @@ TagManager:
   - Arm
   - Stick
   - Hair
+  - Particle
   - WaxParticle
   layers:
   - Default
