@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-  public class StickWaxPoint : MonoBehaviour
+  public class WaxInstantiate : MonoBehaviour
   {
       [SerializeField] private Transform _rayPoint;
 
@@ -13,14 +13,7 @@ using UnityEngine;
       [SerializeField] private GameObject waxPrefab;
 
       [SerializeField] private Transform _operationTransform;
-
-      public int targetFrameRate = 60;
-
-      private void Start()
-      {
-          QualitySettings.vSyncCount = 0;
-          Application.targetFrameRate = targetFrameRate;
-      }
+      
 
       void Update()
       {
@@ -28,10 +21,8 @@ using UnityEngine;
           {
               WaxHit();
           }
-          
       }
-
-      // ReSharper disable Unity.PerformanceAnalysis
+      
       void WaxHit()
       {
           RaycastHit hit;
@@ -42,8 +33,6 @@ using UnityEngine;
                   //Instantiate(waxPrefab, hit.point+hit.normal.normalized*waxPrefab.transform.localScale.x,Quaternion.LookRotation(hit.normal));
                   Instantiate(waxPrefab, hit.point,Quaternion.LookRotation(Vector3.zero)).transform.SetParent(_operationTransform);
               }
-              
-
           }
       }
       

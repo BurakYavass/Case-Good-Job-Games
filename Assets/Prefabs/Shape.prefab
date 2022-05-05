@@ -86,6 +86,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: -8959034105542532146}
   _collider: {fileID: 0}
+  _raymarchShape: {fileID: 1368734254097000993}
 --- !u!65 &4804446021095011385
 BoxCollider:
   m_ObjectHideFlags: 0
