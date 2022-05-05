@@ -687,6 +687,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 7445256042333169078, guid: 257cf1734d99d4cb1b9b28196b0aa575, type: 3}
+      propertyPath: m_Name
+      value: Stick
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 257cf1734d99d4cb1b9b28196b0aa575, type: 3}
 --- !u!1 &413071290
@@ -1412,6 +1416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1272970342}
   - component: {fileID: 1272970343}
+  - component: {fileID: 1272970344}
   m_Layer: 7
   m_Name: Operation
   m_TagString: Untagged
@@ -1453,6 +1458,19 @@ MonoBehaviour:
   minBlend: 0
   maxBlend: 0
   lerpSpeed: 0
+--- !u!114 &1272970344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272970341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff34da2ae9732084387dea7f15240b98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _waxList: []
 --- !u!4 &1278877536 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2502647788168035367, guid: 6f007b46377d7de41badc9880b9c1edc, type: 3}
@@ -1499,7 +1517,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 704
   waxPrefab: {fileID: 8443992130607734732, guid: c8ac1482a0e81514da071bb17b851c53, type: 3}
-  _operationTransform: {fileID: 1272970342}
+  _rayOperation: {fileID: 1272970341}
 --- !u!136 &1296253241
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2644,7 +2662,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2502647788168035352, guid: 6f007b46377d7de41badc9880b9c1edc, type: 3}
       propertyPath: m_Name
-      value: WaxPoint
+      value: Arm_Wax
       objectReference: {fileID: 0}
     - target: {fileID: 2502647788168035352, guid: 6f007b46377d7de41badc9880b9c1edc, type: 3}
       propertyPath: m_IsActive

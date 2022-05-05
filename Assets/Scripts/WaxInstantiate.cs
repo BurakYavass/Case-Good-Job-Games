@@ -12,7 +12,7 @@ using UnityEngine;
 
       [SerializeField] private GameObject waxPrefab;
 
-      [SerializeField] private Transform _operationTransform;
+      [SerializeField] private GameObject _rayOperation;
       
 
       void Update()
@@ -30,8 +30,16 @@ using UnityEngine;
           {
               if (hit.collider.CompareTag("Wax") && !hit.collider.CompareTag("Particle"))
               {
-                  //Instantiate(waxPrefab, hit.point+hit.normal.normalized*waxPrefab.transform.localScale.x,Quaternion.LookRotation(hit.normal));
-                  Instantiate(waxPrefab, hit.point,Quaternion.LookRotation(Vector3.zero)).transform.SetParent(_operationTransform);
+                  /*Sphere instantiate
+                  Instantiate(waxPrefab, hit.point+hit.normal.normalized*waxPrefab.transform.localScale.x,Quaternion.LookRotation(hit.normal));*/
+                  
+                  /*Shape instantiate
+                  Instantiate(waxPrefab, hit.point,Quaternion.LookRotation(Vector3.zero)).transform.SetParent(_rayOperation.transform);*/
+                  
+                  GameObject wax = Instantiate(waxPrefab, hit.point, Quaternion.LookRotation(Vector3.zero));
+                  wax.transform.SetParent(_rayOperation.transform);
+                  _rayOperation.GetComponent<WaxList>()._waxList.Add(wax);
+                  
               }
           }
       }
