@@ -13,7 +13,15 @@ using UnityEngine;
       [SerializeField] private GameObject waxPrefab;
 
       [SerializeField] private Transform _operationTransform;
-      
+
+      public int targetFrameRate = 60;
+
+      private void Start()
+      {
+          QualitySettings.vSyncCount = 0;
+          Application.targetFrameRate = targetFrameRate;
+      }
+
       void Update()
       {
           if (Input.GetMouseButton(0))
@@ -31,15 +39,10 @@ using UnityEngine;
           {
               if (hit.collider.CompareTag("Wax") && !hit.collider.CompareTag("Particle"))
               {
-                  Debug.Log(hit.collider.tag+" "+hit.collider.name);
                   //Instantiate(waxPrefab, hit.point+hit.normal.normalized*waxPrefab.transform.localScale.x,Quaternion.LookRotation(hit.normal));
                   Instantiate(waxPrefab, hit.point,Quaternion.LookRotation(Vector3.zero)).transform.SetParent(_operationTransform);
               }
-
-              if (hit.collider.CompareTag("Particle"))
-              {
-                  Debug.Log("Particle");
-              }
+              
 
           }
       }

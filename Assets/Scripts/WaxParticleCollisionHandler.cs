@@ -20,11 +20,4 @@ public class WaxParticleCollisionHandler : MonoBehaviour
         }
     }
 
-    // private void OnTriggerEnter(Collider other)
-    // {
-    //     if (other.gameObject.CompareTag("Wax"))
-    //     {
-    //         gameObject.transform.SetParent(other.gameObject.transform);
-    //     }
-    // }
 }

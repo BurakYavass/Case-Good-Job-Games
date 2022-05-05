@@ -30,7 +30,7 @@ using UnityEngine;
              {
                  _arm = true;
                  transform.position = hitInfo.point+offSet*hitInfo.normal;
-                 transform.rotation = Quaternion.LookRotation(Vector3.back,hitInfo.normal);
+                 //transform.rotation = Quaternion.LookRotation(Vector3.back,hitInfo.normal);
 
              }
              else
