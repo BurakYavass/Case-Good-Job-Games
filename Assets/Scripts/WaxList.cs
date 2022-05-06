@@ -8,6 +8,7 @@ public class WaxList : MonoBehaviour
 {
     public List<Transform> _waxList = new List<Transform>();
     public bool waxFinished = false;
+    public bool listOk = false;
 
     void Update()
     {
@@ -21,15 +22,15 @@ public class WaxList : MonoBehaviour
             List<Transform> sortPosZ = _waxList.OrderBy(wax => wax.position.z).ToList();
             _waxList.Clear();
             _waxList.AddRange(sortPosZ);
-            
+            listOk = true;
+
             // foreach (var trans in _waxList)
             // {
             //     _pos = trans.transform.position;
             // }
-            
+
             //_waxList.OrderBy(a => a.position.z).ToList();
-
-
+            
         }
     }
 }
