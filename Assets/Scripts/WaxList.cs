@@ -23,14 +23,6 @@ public class WaxList : MonoBehaviour
             _waxList.Clear();
             _waxList.AddRange(sortPosZ);
             listOk = true;
-
-            // foreach (var trans in _waxList)
-            // {
-            //     _pos = trans.transform.position;
-            // }
-
-            //_waxList.OrderBy(a => a.position.z).ToList();
-            
         }
     }
 }

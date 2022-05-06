@@ -8,7 +8,7 @@ public class WaxPartCollHandler : MonoBehaviour
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private Collider _collider;
     [SerializeField] private RaymarchShape _raymarchShape;
-    [SerializeField] private SpringJoint _springJoint;
+    
 
     private void Awake()
     {

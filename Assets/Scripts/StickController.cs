@@ -13,7 +13,6 @@ using UnityEngine;
      [SerializeField] private LayerMask _Mask;
      
      public bool _arm;
-
      void Update()
      {
          MousePosition();

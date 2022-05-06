@@ -8,7 +8,6 @@ public class waxPickUp : MonoBehaviour
 {
     [SerializeField] private WaxList _wax;
     
-    private bool pickup = false;
 
     private void Start()
     {
@@ -21,16 +20,19 @@ public class waxPickUp : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                pickup = true;
+                StartCoroutine(MoveWax());
             }
+            
+        }
+    }
 
-            if (pickup)
-            {
-                for (int i = 0; i < _wax._waxList.Count; i++)
-                {
-                    _wax._waxList[i].DOMoveY(4, 4);
-                }
-            }
+    private IEnumerator MoveWax()
+    {
+        for (int i = 0; i < _wax._waxList.Count; i++)
+        {
+            yield return new WaitForSeconds(0.03f);
+            _wax._waxList[i].DOMoveY(4, 4);
+            yield return null;
         }
     }
 }

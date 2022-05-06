@@ -1571,8 +1571,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wax: {fileID: 1272970344}
-  lerpSpeed: 1
-  stackHeight: 0.01
 --- !u!4 &1278877536 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2502647788168035367, guid: 6f007b46377d7de41badc9880b9c1edc, type: 3}
@@ -2190,7 +2188,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 10
-  m_Height: 49.886368
+  m_Height: 68.53
   m_Direction: 0
   m_Center: {x: -24.290636, y: -0.028034443, z: 3.5645092}
 --- !u!1 &1492854405
@@ -2862,6 +2860,10 @@ PrefabInstance:
     - target: {fileID: 2502647788168035364, guid: 6f007b46377d7de41badc9880b9c1edc, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2502647788168035364, guid: 6f007b46377d7de41badc9880b9c1edc, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2502647788168035366, guid: 6f007b46377d7de41badc9880b9c1edc, type: 3}
       propertyPath: m_Enabled
