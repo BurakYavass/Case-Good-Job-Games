@@ -9,7 +9,7 @@ using UnityEngine;
      [SerializeField] private Camera camera;
      [SerializeField] private float offSet = 0.5f;
      [SerializeField] private float rayOffSet = 100f;
-
+     [SerializeField] private WaxList _waxList;
      [SerializeField] private LayerMask _Mask;
      
      public bool _arm;
@@ -18,6 +18,10 @@ using UnityEngine;
      {
          MousePosition();
          
+         if (_waxList.waxFinished)
+         {
+             gameObject.SetActive(false);
+         }
      }
 
      void MousePosition()
@@ -31,7 +35,6 @@ using UnityEngine;
                  _arm = true;
                  transform.position = hitInfo.point+offSet*hitInfo.normal;
                  //transform.rotation = Quaternion.LookRotation(Vector3.back,hitInfo.normal);
-
              }
              else
              {

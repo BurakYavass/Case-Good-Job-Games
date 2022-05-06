@@ -21,10 +21,16 @@ public class WaxPartCollHandler : MonoBehaviour
         {
             _rb.isKinematic = true;
             
-            // Vector3 Scale = gameObject.transform.localScale;
-            // Scale.y = 0.01f;
             // gameObject.transform.localScale = Scale;
             //_collider.isTrigger = true;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Hair"))
+        {
+            other.gameObject.transform.SetParent(gameObject.transform);
         }
     }
 

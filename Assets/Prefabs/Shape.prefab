@@ -50,7 +50,7 @@ MonoBehaviour:
   color: {r: 0.7529412, g: 0.3529412, b: 0.7490196, a: 1}
   sphereRadius: 0.01
   boxDimensions: {x: 1, y: 1, z: 1}
-  roundBoxDimensions: {x: 0.03, y: 0, z: 0.01}
+  roundBoxDimensions: {x: 0.035, y: 0, z: 0.02}
   roundBoxFactor: 0.02
   torusOuterRadius: 0.25
   torusInnerRadius: 0.5
@@ -98,5 +98,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 0.3, z: 1}
+  m_Size: {x: 3, y: 0.3, z: 2}
   m_Center: {x: 0, y: 0, z: 0}

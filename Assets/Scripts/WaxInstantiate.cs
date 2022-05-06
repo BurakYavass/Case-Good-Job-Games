@@ -38,7 +38,7 @@ using UnityEngine;
                   
                   GameObject wax = Instantiate(waxPrefab, hit.point, Quaternion.LookRotation(Vector3.zero));
                   wax.transform.SetParent(_rayOperation.transform);
-                  _rayOperation.GetComponent<WaxList>()._waxList.Add(wax);
+                  _rayOperation.GetComponent<WaxList>()._waxList.Add(wax.transform);
                   
               }
           }

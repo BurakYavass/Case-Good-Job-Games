@@ -1197,7 +1197,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 119
   m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
@@ -1537,7 +1537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   operation: 3
   childCount: 1
-  blendStrength: 0.02
+  blendStrength: 0.035
   lerpBlend: 0
   minBlend: 0
   maxBlend: 0
@@ -1555,6 +1555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _waxList: []
+  waxFinished: 0
 --- !u!4 &1278877536 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2502647788168035367, guid: 6f007b46377d7de41badc9880b9c1edc, type: 3}
@@ -1580,6 +1581,7 @@ MonoBehaviour:
   camera: {fileID: 963194227}
   offSet: 0.09
   rayOffSet: 150
+  _waxList: {fileID: 1272970344}
   _Mask:
     serializedVersion: 2
     m_Bits: 64
@@ -1643,14 +1645,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297834108}
-  m_LocalRotation: {x: -0.66739565, y: -0.67585665, z: -0.30194727, w: 0.081416994}
-  m_LocalPosition: {x: -72.79837, y: -53.013405, z: 81.80696}
+  m_LocalRotation: {x: -0.6769299, y: -0.66489106, z: -0.3039706, w: 0.08536867}
+  m_LocalPosition: {x: -73.4, y: -47.4, z: 84.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1272970342}
   m_Father: {fileID: 6183117896059936683}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -10.164, y: -10.394, z: 24.883}
+  m_LocalEulerAnglesHint: {x: -148.682, y: -20.416016, z: -83.19202}
 --- !u!114 &1297834110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2858,7 +2860,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2502647788168035367, guid: 6f007b46377d7de41badc9880b9c1edc, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.9
+      value: 0.97928995
       objectReference: {fileID: 0}
     - target: {fileID: 2502647788168035367, guid: 6f007b46377d7de41badc9880b9c1edc, type: 3}
       propertyPath: m_LocalScale.z
@@ -2866,15 +2868,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2502647788168035367, guid: 6f007b46377d7de41badc9880b9c1edc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.54
+      value: -0.38324
       objectReference: {fileID: 0}
     - target: {fileID: 2502647788168035367, guid: 6f007b46377d7de41badc9880b9c1edc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.03
+      value: -0.022819
       objectReference: {fileID: 0}
     - target: {fileID: 2502647788168035367, guid: 6f007b46377d7de41badc9880b9c1edc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.13
+      value: 0.70726
       objectReference: {fileID: 0}
     - target: {fileID: 2502647788168035367, guid: 6f007b46377d7de41badc9880b9c1edc, type: 3}
       propertyPath: m_LocalRotation.w
