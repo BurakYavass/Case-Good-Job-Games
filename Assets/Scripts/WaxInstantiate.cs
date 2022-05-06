@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
   public class WaxInstantiate : MonoBehaviour
@@ -8,10 +9,7 @@ using UnityEngine;
 
       [SerializeField] private GameObject waxPrefab;
 
-      [SerializeField] private GameObject _rayOperation;
-
-      private bool _particle = false;
-      
+      [SerializeField] private WaxList _list;
 
       void Update()
       {
@@ -20,35 +18,28 @@ using UnityEngine;
               WaxHit();
           }
       }
-
-      private void OnTriggerEnter(Collider other)
-      {
-          if (other.gameObject.CompareTag("Particle"))
-          {
-              _particle = true;
-          }
-          else
-          {
-              _particle = false;
-          }
-      }
+      
 
       void WaxHit()
       {
           RaycastHit hit;
-          if (Physics.Raycast(_rayPoint.transform.position, Vector3.down, out hit,100f,_layerMask))
+          if (Physics.Raycast(_rayPoint.transform.position, Vector3.down, out hit,1000f,_layerMask))
           {
-              if (hit.collider.CompareTag("Wax")&& _particle==false)
+              if (hit.collider.CompareTag("Wax"))
               {
-                  /*Sphere instantiate
-                  Instantiate(waxPrefab, hit.point+hit.normal.normalized*waxPrefab.transform.localScale.x,Quaternion.LookRotation(hit.normal));*/
+                  //Sphere instantiate
+                  //GameObject wax = Instantiate(waxPrefab, hit.point+hit.normal.normalized*waxPrefab.transform.localScale.x,Quaternion.LookRotation(hit.normal));
+                  Debug.Log(hit.collider.tag);
+                  GameObject wax = Instantiate(waxPrefab, hit.point, Quaternion.LookRotation(Vector3.zero));
+                  wax.transform.SetParent(hit.collider.transform);
+                  _list._waxList.Add(wax.transform);
                   
                   /*Shape instantiate
                   Instantiate(waxPrefab, hit.point,Quaternion.LookRotation(Vector3.zero)).transform.SetParent(_rayOperation.transform);*/
                   
-                  GameObject wax = Instantiate(waxPrefab, hit.point, Quaternion.LookRotation(Vector3.zero));
-                  wax.transform.SetParent(_rayOperation.transform);
-                  _rayOperation.GetComponent<WaxList>()._waxList.Add(wax.transform);
+                  // GameObject wax = Instantiate(waxPrefab, hit.point, Quaternion.LookRotation(Vector3.zero));
+                  // wax.transform.SetParent(_rayOperation.transform);
+                  //rayOperation.GetComponent<WaxList>()._waxList.Add(wax.transform);
                   
               }
           }

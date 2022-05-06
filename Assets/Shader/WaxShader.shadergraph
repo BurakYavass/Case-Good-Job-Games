@@ -180,7 +180,7 @@
                 "m_Node": {
                     "m_Id": "66dec7ce39e94b48a53ab5be6cc826d9"
                 },
-                "m_SlotId": 1
+                "m_SlotId": 2
             }
         },
         {
@@ -312,10 +312,10 @@
                 "m_Id": "e2f16cfc82cd48ed90abe5ea9e6f9a1f"
             },
             {
-                "m_Id": "72bd450451764e6f9dabcaf59fca6434"
+                "m_Id": "8bb07f6b856b489390580377fe327588"
             },
             {
-                "m_Id": "8bb07f6b856b489390580377fe327588"
+                "m_Id": "72bd450451764e6f9dabcaf59fca6434"
             },
             {
                 "m_Id": "56092122b5b94aeaa182ad5bf9dcbe14"
@@ -701,7 +701,7 @@
     "m_StageCapability": 3,
     "m_Value": {
         "x": -1.0,
-        "y": 1.0
+        "y": 10.0
     },
     "m_DefaultValue": {
         "x": 0.0,
@@ -1529,7 +1529,7 @@
     "m_StageCapability": 3,
     "m_Value": {
         "x": 0.0,
-        "y": 1.0
+        "y": 6.309999942779541
     },
     "m_DefaultValue": {
         "x": 0.0,
@@ -2031,7 +2031,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Power",
     "m_StageCapability": 3,
-    "m_Value": 3.0,
+    "m_Value": 5.0,
     "m_DefaultValue": 1.0,
     "m_Labels": []
 }
