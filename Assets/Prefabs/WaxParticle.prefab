@@ -127,3 +127,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 2864617634034085463}
+  _renderer: {fileID: 9038208854470906096}

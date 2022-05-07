@@ -11,6 +11,8 @@ using UnityEngine;
 
       [SerializeField] private WaxList _list;
 
+      [SerializeField] private Transform parent;
+
       private bool waxCollider = false;
 
       void Update()
@@ -25,12 +27,12 @@ using UnityEngine;
       void WaxHit()
       {
           RaycastHit hit;
-          if (Physics.Raycast(_rayPoint.transform.position, Vector3.down, out hit,100f,_layerMask))
+          if (Physics.Raycast(_rayPoint.transform.position, Vector3.down, out hit,200f,_layerMask))
           {
               if (hit.collider.CompareTag("Wax"))
               {
                   GameObject wax = Instantiate(waxPrefab, hit.point, Quaternion.LookRotation(hit.normal));
-                  wax.transform.SetParent(hit.collider.transform);
+                  wax.transform.SetParent(parent.transform);
                   _list._waxList.Add(wax.transform);
                   
                   //Sphere instantiate
@@ -44,23 +46,24 @@ using UnityEngine;
                   //rayOperation.GetComponent<WaxList>()._waxList.Add(wax.transform);
               }
           }
-          
-          if (Physics.Raycast(_rayPoint2.transform.position, Vector3.down, out hit,100f,_layerMask))
+
+          RaycastHit hit2;
+          if (Physics.Raycast(_rayPoint2.transform.position, Vector3.down, out hit2,200f,_layerMask))
           {
               if (hit.collider.CompareTag("Wax"))
               {
-                  GameObject wax2 = Instantiate(waxPrefab, hit.point, Quaternion.LookRotation(Vector3.zero));
-                  wax2.transform.SetParent(hit.collider.transform);
+                  GameObject wax2 = Instantiate(waxPrefab, hit2.point, Quaternion.LookRotation(Vector3.zero));
+                  wax2.transform.SetParent(parent.transform);
                   _list._waxList.Add(wax2.transform);
               }
           }
-          
-          if (Physics.Raycast(_rayPoint3.transform.position, Vector3.down, out hit,100f,_layerMask))
+          RaycastHit hit3;
+          if (Physics.Raycast(_rayPoint3.transform.position, Vector3.down, out hit3,200f,_layerMask))
           {
               if (hit.collider.CompareTag("Wax"))
               {
-                  GameObject wax3 = Instantiate(waxPrefab, hit.point, Quaternion.LookRotation(Vector3.zero));
-                  wax3.transform.SetParent(hit.collider.transform);
+                  GameObject wax3 = Instantiate(waxPrefab, hit3.point, Quaternion.LookRotation(Vector3.zero));
+                  wax3.transform.SetParent(parent.transform);
                   _list._waxList.Add(wax3.transform);
               }
           }
