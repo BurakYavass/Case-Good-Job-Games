@@ -50,7 +50,7 @@ using UnityEngine;
           RaycastHit hit2;
           if (Physics.Raycast(_rayPoint2.transform.position, Vector3.down, out hit2,200f,_layerMask))
           {
-              if (hit.collider.CompareTag("Wax"))
+              if (hit2.collider.CompareTag("Wax"))
               {
                   GameObject wax2 = Instantiate(waxPrefab, hit2.point, Quaternion.LookRotation(Vector3.zero));
                   wax2.transform.SetParent(parent.transform);
@@ -60,7 +60,7 @@ using UnityEngine;
           RaycastHit hit3;
           if (Physics.Raycast(_rayPoint3.transform.position, Vector3.down, out hit3,200f,_layerMask))
           {
-              if (hit.collider.CompareTag("Wax"))
+              if (hit3.collider.CompareTag("Wax"))
               {
                   GameObject wax3 = Instantiate(waxPrefab, hit3.point, Quaternion.LookRotation(Vector3.zero));
                   wax3.transform.SetParent(parent.transform);
