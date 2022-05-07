@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class WaxList : MonoBehaviour
 {
-    public List<Transform> _waxList = new  List<Transform>();
+    public List<Transform> _waxList = new  List<Transform>(100);
     public bool waxFinished = false;
     public bool listOk = false;
 
-    void Update()
+    void FixedUpdate()
     {
-        if (_waxList.Count == 200)
+        Debug.Log(_waxList.Count);
+        
+        if (_waxList.Count == 100)
         {
             waxFinished = true;
         }

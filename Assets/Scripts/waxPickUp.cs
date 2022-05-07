@@ -28,7 +28,7 @@ public class waxPickUp : MonoBehaviour
     {
         for (int i = 0; i < _wax._waxList.Count; i++)
         {
-            yield return new WaitForSeconds(0.03f);
+            yield return new WaitForSeconds(0.01f);
             _wax._waxList[i].DOMoveY(4, 4);
             yield return null;
         }
