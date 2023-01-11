@@ -1,3 +1,3 @@
 # Case-Good-Job-Games
 
-[Gameplay videos:] (https://drive.google.com/drive/folders/1F3j4FL6mVDCE6Ze2zK_Pw5wgYsP_vtwX?usp=sharing)
+[Gameplay videos:](https://drive.google.com/drive/folders/1F3j4FL6mVDCE6Ze2zK_Pw5wgYsP_vtwX?usp=sharing)
